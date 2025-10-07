@@ -51,9 +51,10 @@ venvScriptsActivate.ps1
 pip install requests python-dotenv ntplib
 ```
 
-5. Create a `.env` file:
+5. Create a `.env` file in the project root:
 
 ```
+# .env example
 ACCESS_TOKEN=your_meetup_api_token
 MEETUP_API_URL=https://api.meetup.com/graphql
 DRY_RUN=False
@@ -63,11 +64,17 @@ DRY_RUN=False
 
 ## Usage
 
-Run the script **inside the activated virtual environment**:
+Run the script **inside the activated virtual environment** using flags:
 
 ```bash
 python meetup_api_rsvp.py --club_name "someclub" --day_in_week "wed" --session_name "session-name"
 ```
+
+Where the flags are:
+
+- `--club_name` – Meetup club URL name (e.g., `someclub`)  
+- `--day_in_week` – Day of the week abbreviation (e.g., `mon`, `tue`, `wed`)  
+- `--session_name` – Partial or full name of the session/event (e.g., `session-name`)
 
 Or without activating the venv:
 
@@ -83,8 +90,6 @@ Or without activating the venv:
 ---
 
 ## Deactivate the virtual environment
-
-After running:
 
 ```bash
 deactivate
